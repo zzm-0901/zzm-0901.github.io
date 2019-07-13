@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Swiper全屏自适应图片轮播代码</title>
+
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<style>
+	body {
+
+		background-color: #fff;
+	}
+	.photo{
+		width: 800px;
+		margin: 200px auto;
+	}
+
+	.button{
+		top: -250px;
+	}
+
+	.left,.right{
+		width: 43px;
+		height: 43px;
+		margin-top: 0;
+	}
+
+	.left{
+		left: 72px
+	}
+
+	.right {
+		right: 72px;
+	}
+
+	.swiper-slide img {
+		width: 400px;
+		height: 300px;
+	}
+	
+</style>
+</head>
+<body>
+
+<section class="pc-banner w">
+	<div class="swiper-container photo">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide swiper-slide-center none-effect">
+				<a href="#">
+					<img src="./img/01.jpg">
+				</a>
+				<div class="layer-mask"></div>
+			</div>
+			<div class="swiper-slide">
+				<a href="#">
+					<img src="./img/02.jpg">
+				</a>
+				<div class="layer-mask"></div>
+			</div>
+			<div class="swiper-slide">
+				<a href="#">
+					<img src="./img/03.jpg">
+				</a>
+				<div class="layer-mask"></div>
+			</div>
+			<div class="swiper-slide">
+				<a href="#">
+					<img src="./img/04.jpg">
+				</a>
+				<div class="layer-mask"></div>
+			</div>
+			<div class="swiper-slide">
+				<a href="#">
+					<img src="./img/05.jpg">
+				</a>
+				<div class="layer-mask"></div>
+			</div>
+			<div class="swiper-slide">
+				<a href="#">
+
+					<img src="./img/06.jpg">
+				</a>
+				<div class="layer-mask"></div>
+			</div>
+		</div>
+		<div class="button">
+			<div class="swiper-button-prev left"></div>
+			<div class="swiper-button-next right"></div>
+		</div>
+	</div>
+</section>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript">
+
+	window.onload = function() {
+		var swiper = new Swiper('.swiper-container',{
+			autoplay: false,
+			speed: 1000,
+			autoplayDisableOnInteraction: false,
+			loop: true,
+			centeredSlides: true,
+			slidesPerView: 2,
+			pagination: '.swiper-pagination',
+			paginationClickable: true,
+			prevButton: '.swiper-button-prev',
+			nextButton: '.swiper-button-next',
+			onInit: function(swiper) {
+				swiper.slides[2].className = "swiper-slide swiper-slide-active";
+			},
+			breakpoints: {
+				668: {
+					slidesPerView: 1,
+				}
+			}
+		});
+	}
+
+
+</script>
+
+</body>
+</html>
